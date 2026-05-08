@@ -1,17 +1,16 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using sistema_de_ponto_front.Views;
 
-namespace sistema_de_ponto_front
+namespace sistema_de_ponto_front;
+
+public partial class App : Application
 {
-    public partial class App : Application
+    public App()
     {
-        public App()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
+    }
 
-        protected override Window CreateWindow(IActivationState? activationState)
-        {
-            return new Window(new AppShell());
-        }
+    protected override Window CreateWindow(IActivationState? activationState)
+    {
+        return new Window(new NavigationPage(new LoginPage()));
     }
 }
